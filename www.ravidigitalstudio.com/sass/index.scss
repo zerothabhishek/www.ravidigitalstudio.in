@@ -1,0 +1,105 @@
+@import "screen";
+
+body{
+	background-image: url("/images/bg.jpg");
+}
+
+#container{
+	@include container;
+  @include blueprint-typography(true);
+  font-size: 100%;
+	h2{
+		margin-bottom: 0;
+	}
+	h4{		
+	}
+	a{
+		text-decoration:none;
+		color: #000000;
+	}
+	a:hover{
+		color: #ff9900;
+	}
+	a:visited{
+		color: #222222;
+	}
+	a:active{
+		color: #ff9900;
+	}
+	a:focus{
+		color: #ff9900;
+	}
+}
+
+#container header{
+	text-align: center;
+	padding-top: span(1);
+}
+
+
+@mixin desc-box{
+	//background-color: #590325;  //  colorlovers:palette:911024
+	color: #000;
+	border: 1px solid #AAAAAA;             
+	border-radius: 4px;
+	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);	
+	padding: 1em;
+}
+
+#description{
+  @include column(10);
+  .inner{
+		@include desc-box;
+	  height: span(11);
+  }
+}
+
+#introduction{
+	padding-top: 2em;
+}
+
+@mixin action-button{
+	margin-right: 1em;
+	//font-weight: bold;
+	text-transform: uppercase;
+	border-radius: 4px;
+	box-shadow: 0 0 1px 1px #111111;
+	padding: 0.5em;	
+}
+#actions{
+	margin-top: span(1);
+	//font-size: 75%;
+	.action{
+		background-color: #590325;
+		color: #ff9900;
+		@include action-button;
+	}
+	.action:hover{
+		@include action-button;
+		box-shadow: 0 0 1px 2px #111111;
+		//color: #111111;
+	}
+}
+
+#gallery{
+	@include column(14, last);
+	li{
+		@include column(6);
+		height: span(4);
+		margin-bottom: 10px;
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+		img{
+			width: span(6);
+			height: span(4);
+			border: 2px solid #FFFFFF;
+			border-radius: 4px;
+		}
+	}
+	.more{
+		position: relative;
+		top: span(5);
+		text-decoration: none;
+	}
+}
+
+
